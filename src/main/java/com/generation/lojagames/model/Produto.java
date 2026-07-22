@@ -47,6 +47,7 @@ public class Produto {
     private Integer estoque;
     
     //Cria o atributo foto
+    
     @Size(max = 1000, message = "O link para anexar a foto deve ter no máximo 1000 caracteres.")
     @Column(length = 1000)
     private String foto;
