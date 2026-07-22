@@ -38,4 +38,5 @@ O sistema permite cadastrar **categorias** e **produtos**, mostrando o relaciona
 ---
 
 👩‍💻 Autora
+
 Projeto desenvolvido por **Sara Hurtado** como parte dos estudos de Spring Boot e JPA
