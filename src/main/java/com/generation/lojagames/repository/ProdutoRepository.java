@@ -12,9 +12,9 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	public List<Produto> findAllByTituloContainingIgnoreCase(String titulo);
 	
 	//Busca produtos com preço maior que um valor (ordem crescente)
-    public List<Produto> findByPrecoGreaterThanOrderByPrecoAsc(Double preco);
+    public List<Produto> findAllByPrecoGreaterThanOrderByPreco(Double preco);
     
  // Busca produtos com preço menor que um valor (ordem decrescente)
-    public List<Produto> findByPrecoLessThanOrderByPrecoDesc(Double preco);
+    public List<Produto> findAllByPrecoLessThanOrderByPrecoDesc(Double preco);
 	
 }

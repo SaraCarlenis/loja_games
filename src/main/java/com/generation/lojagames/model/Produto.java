@@ -46,10 +46,16 @@ public class Produto {
     @Column(nullable = false)
     private Integer estoque;
     
+    //Cria o atributo foto
+    @Size(max = 1000, message = "O link para anexar a foto deve ter no máximo 1000 caracteres.")
+    @Column(length = 1000)
+    private String foto;
+    
     @ManyToOne ////Relacionamento Many to One com Categoria
     @JoinColumn(name = "categoria_id", nullable = false)
     @JsonBackReference //evita o loop infinito no Insomnia.
     private Categoria categoria;
+    
 
 	public Long getId() {
 		return id;
@@ -91,6 +97,15 @@ public class Produto {
 		this.estoque = estoque;
 	}
 	
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
