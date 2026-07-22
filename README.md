@@ -1,47 +1,41 @@
-# í¾® Loja Games
-# í¾® Loja Games
-
+# ğŸ® Loja Games
 
 Projeto desenvolvido em **Spring Boot** com **Java**, simulando uma loja de games online.  
-
 O sistema permite cadastrar **categorias** e **produtos**, mostrando o relacionamento entre eles.
 
+---
 
-## íº€ Funcionalidades
+## ğŸ“Œ Funcionalidades
 
-- Cadastro de categorias
+- Cadastro de **Categorias** (ex.: Aventura, RPG, Esportes, Terror).
+- Cadastro de **Produtos** (ex.: jogos como Zelda, FIFA, Minecraft).
+- Relacionamento **Uma Categoria â†’ N Produtos**.
+- Consultas personalizadas:
+  - Buscar produtos por **nome**.
+  - Buscar produtos por **preÃ§o maior que um valor** (ordem crescente).
+  - Buscar produtos por **preÃ§o menor que um valor** (ordem decrescente).
+- Evita loop infinito nas consultas com `@JsonManagedReference` e `@JsonBackReference`.
 
-- Cadastro de produtos
+---
 
-- Relacionamento 1:N (uma categoria â†’ vÃ¡rios produtos)
+## ğŸ› ï¸ Tecnologias utilizadas
 
-- Consultas por nome, tipo e preÃ§o
+- **Java 17**
+- **Spring Boot**
+- **Spring Data JPA**
+- **Hibernate**
+- **MySQL**
+- **Insomnia** (para testes da API)
 
+---
 
-## í» ï¸ Tecnologias
+## ğŸ“‚ Estrutura do Projeto
 
-- Java 17
+- `model/` â†’ Entidades (`Produto`, `Categoria`)
+- `repository/` â†’ Interfaces de acesso ao banco (`ProdutoRepository`, `CategoriaRepository`)
+- `controller/` â†’ Endpoints REST (`ProdutoController`, `CategoriaController`)
 
-- Spring Boot
+---
 
-- JPA / Hibernate
-
-- MySQL
-
-- Insomnia para testes
-
-
-## í³Œ Como rodar
-
-1. Clone o repositorio
-
-2. Configure o banco no `application.properties`
-
-3. Rode com `mvn spring-boot:run`
-
-4. Teste os endpoints no Insomnia
-
-
-## í±©â€í²» Autora
-
-Projeto desenvolvido por **Sara** como parte dos estudos de Spring Boot e JPA.
+ğŸ‘©â€ğŸ’» Autora
+Projeto desenvolvido por **Sara Hurtado** como parte dos estudos de Spring Boot e JPA
