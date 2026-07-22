@@ -31,6 +31,18 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
+	// Busca produtos com preço maior que um valor (ordem crescente)
+    @GetMapping("/precoMaior/{preco}")
+    public ResponseEntity<List<Produto>> getByPrecoMaior(@PathVariable Double preco) {
+        return ResponseEntity.ok(produtoRepository.findByPrecoGreaterThanOrderByPrecoAsc(preco));
+    }
+
+    // Busca produtos com preço menor que um valor (ordem decrescente)
+    @GetMapping("/precoMenor/{preco}")
+    public ResponseEntity<List<Produto>> getByPrecoMenor(@PathVariable Double preco) {
+        return ResponseEntity.ok(produtoRepository.findByPrecoLessThanOrderByPrecoDesc(preco));
+    }
+	
 	// GET - listar todos
 	@GetMapping
 	public ResponseEntity<List<Produto>> getAll(){

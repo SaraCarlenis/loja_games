@@ -8,6 +8,13 @@ import com.generation.lojagames.model.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 	
+	//Busca produtos pelo título (já existente?
 	public List<Produto> findAllByTituloContainingIgnoreCase(String titulo);
+	
+	//Busca produtos com preço maior que um valor (ordem crescente)
+    public List<Produto> findByPrecoGreaterThanOrderByPrecoAsc(Double preco);
+    
+ // Busca produtos com preço menor que um valor (ordem decrescente)
+    public List<Produto> findByPrecoLessThanOrderByPrecoDesc(Double preco);
 	
 }
